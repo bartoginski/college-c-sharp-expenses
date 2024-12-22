@@ -1,9 +1,22 @@
 ﻿using Spectre.Console;
 
-public static class Program
+namespace Expenses
 {
-    public static void Main(string[] args)
+
+    public static class Program
     {
-        AnsiConsole.Markup("[underline red]Hello[/] World!");
+
+        static List<Expense> expenses = [];
+
+        public static void Main(string[] args)
+        {
+            var selectedMenuOption = AnsiConsole.Prompt(
+                new SelectionPrompt<string>()
+                .Title("What do you need?")
+                .PageSize(10)
+                .MoreChoicesText("[grey](Navigate with arrows)[/]")
+                .AddChoices(Options.menuOptions)
+            );
+        }
     }
 }
