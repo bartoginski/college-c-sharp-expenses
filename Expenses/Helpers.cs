@@ -11,7 +11,7 @@ namespace Expenses
             "Exit",
         ];
 
-        public static int GetInteractiveMenu(List<string> options, string title = "")
+        public static int GetInteractiveMenu(List<string> options, string title = "", bool disableExit = false)
         {
             var selectedOption = 0;
 
@@ -19,8 +19,10 @@ namespace Expenses
             {
                 Console.Clear();
                 Console.WriteLine(title);
-                Console.WriteLine(
-                    "(Navigate with up and down arrows, select with Enter, Tab to return to the main menu)");
+
+                Console.WriteLine(disableExit
+                    ? "(Navigate with up and down arrows, select with Enter)"
+                    : "(Navigate with up and down arrows, select with Enter, Tab to return to the main menu)");
 
                 for (var i = 0; i < options.Count; i++)
                 {
@@ -45,7 +47,7 @@ namespace Expenses
                         break;
                     case ConsoleKey.Enter:
                         return selectedOption;
-                    case ConsoleKey.Tab:
+                    case ConsoleKey.Tab when ! disableExit:
                         // Return -1 to indicate that the user wants to return to the main menu (should be handled by the caller)
                         return -1;
                 }
