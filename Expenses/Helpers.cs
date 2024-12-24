@@ -11,7 +11,14 @@ namespace Expenses
             "Exit",
         ];
 
-        public static int GetInteractiveMenu(List<string> options, string title = "", bool disableExit = false)
+        /// <summary>
+        /// Creates an interactive manu based on the provided options.
+        /// </summary>
+        /// <param name="options">List of String options</param>
+        /// <param name="title">(Optional) Displayed title</param>
+        /// <param name="disableExit">(Optional) Disable exiting option, useful when user has to make a choice</param>
+        /// <returns>An index of the selected menu position</returns>
+        public static int MakeInteractiveMenu(List<string> options, string title = "", bool disableExit = false)
         {
             var selectedOption = 0;
 
