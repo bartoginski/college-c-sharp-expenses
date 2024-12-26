@@ -12,7 +12,7 @@ namespace Expenses
         {
             Title = title;
             Amount = amount;
-            Date = date != "" ? date : DateTime.Now.ToString("dd-MM-yyyy");
+            Date = date != "" ? date : DateTime.Now.ToString("dd.MM.yyyy");
             Tag = tag;
         }
     }

@@ -69,7 +69,7 @@
             Console.WriteLine($"Enter the amount: ({_amountCurrency})");
             var amount = double.TryParse(Console.ReadLine(), out var result) ? result : 0;
 
-            Console.WriteLine("Enter the date (by default today date in format dd-MM-yyyy):");
+            Console.WriteLine("Enter the date (by default today date in format dd.MM.yyyy):");
             var date = Console.ReadLine()?.Trim() ?? "";
             
             Console.WriteLine("Enter the category:");
