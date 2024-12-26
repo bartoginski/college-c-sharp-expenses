@@ -103,11 +103,7 @@
             {
                 string expenseSummary = "";
 
-                if (expense.Title != "")
-                {
-                    expenseSummary += expense.Title;
-                }
-
+                expenseSummary += expense.Title != "" ? expense.Title : "Unknown";
                 expenseSummary += " - " + expense.Amount + _amountCurrency;
                 
                 if (expense.Date != "")
